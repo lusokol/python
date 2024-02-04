@@ -17,11 +17,6 @@ ft_set.add('Paris!')
 ft_set.add('Hello')
 ft_set = sorted(ft_set)
 
-# doesn't work everytime
-#ft_set = {"Hello", "Paris!"}
-
-#ft_set = sorted(ft_set.symmetric_difference({'tutu!', 'Paris!'}))
-
 #dict change
 ft_dict.update(Hello='42Paris!')
 
