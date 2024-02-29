@@ -4,10 +4,10 @@ import string
 
 def countCharTypes(text):
     """
-    countCharTypes(str) --> void
+countCharTypes(str) --> void
 
-    Count every digit, uppercase, lowercase, spaces, and punctuation
-     elements in the text as input then display a summary about it
+Count every digit, uppercase, lowercase, spaces, and punctuation
+ elements in the text as input then display a summary about it
     """
     digit = sum(1 for char in text if char.isdigit())
     upper = sum(1 for char in text if char.isupper())
@@ -25,9 +25,9 @@ def countCharTypes(text):
 
 def askForText() -> str:
     """
-    askForText(void) --> str
+askForText(void) --> str
 
-    Ask user to input something and return it.
+Ask user to input something and return it.
     """
     text = input("What is the text to count?\n")
     return text
