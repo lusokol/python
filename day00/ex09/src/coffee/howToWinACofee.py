@@ -1,6 +1,7 @@
 import random
 import time
 
+
 def howToWinACofee():
     print("Simple rules, heads I win, tail you lose.")
     print("The loser pays a coffee to the winner !")

@@ -1,3 +1,4 @@
-from ft_package import *
+from coffee import howToWinACoffee
 
-howToWinACofee()
+# Appel de la fonction
+howToWinACoffee()
