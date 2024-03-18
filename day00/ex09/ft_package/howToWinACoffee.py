@@ -1,8 +1,10 @@
+from colorama import Fore, Style
 import random
 import time
 
 
-def howToWinACofee():
+def howToWinACoffee():
+    print(Fore.GREEN)
     print("Simple rules, heads I win, tail you lose.")
     print("The loser pays a coffee to the winner !")
     print("Are you ready ? (press any key to continue...)")
@@ -22,3 +24,4 @@ def howToWinACofee():
         print("You lose...")
     else:
         print("I win !")
+    print(Style.RESET_ALL)

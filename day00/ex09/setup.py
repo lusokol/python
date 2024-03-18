@@ -1,10 +1,10 @@
 from setuptools import setup, find_packages
 
+
 setup(
-    name='coffee',
+    name='ft_package',
     version='0.0.1',
-    packages=find_packages(where='src'),
-    package_dir={'': 'src'},
+    packages=find_packages(),
     author='Lucas Sokol',
     author_email='sokol.lucas@gmail.com',
     description='A small useless package from lusokol',
