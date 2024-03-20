@@ -4,6 +4,10 @@ import time
 
 
 def howToWinACoffee():
+    """
+Easy function, it make me win a coffee every single time someone\
+ correct this function !
+    """
     print(Fore.GREEN)
     print("Simple rules, heads I win, tail you lose.")
     print("The loser pays a coffee to the winner !")

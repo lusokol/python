@@ -2,6 +2,9 @@ import sys
 
 
 def main():
+    """
+    This program converts any single alphanumeric character into morse.
+    """
     morse = {"A": ".-", "B": "-...", "C": "-.-.", "D": "-..",
              "E": ".", "F": "..-.", "G": "--.", "H": "....",
              "I": "..", "J": ".---", "K": "-.-", "L": ".-..",

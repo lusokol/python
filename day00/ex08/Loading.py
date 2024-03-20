@@ -4,12 +4,20 @@ import shutil
 
 
 def format_time(seconds: int):
+    """
+format_time(int) => fString
+Transform the given int which correspond to seconds, into a formated string :\
+ 'mm:ss' m =>minute s=>second
+    """
     m, s = divmod(seconds, 60)
     return f"{int(m):02d}:{int(s):02d}"
 
 
 def ft_tqdm(lst: range) -> None:
-    # nombre d'actualisations par seconde :
+    """
+This function imitate tqdm() function. It need a range to generate a\
+ charge bar. At every call it make the bar progress, until the end.
+    """
     nbActualisation = 10
 
     start = time.time()
