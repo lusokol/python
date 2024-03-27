@@ -20,7 +20,7 @@ ft_load(path: str) -> np.ndarray
     try:
         if (msg == 1):
             print(f"The shape of image is: ({img.size[1]}, {img.size[0]}, \
-{img.layers}) or ({img.size[1]}, {img.size[0]})")
+{img.layers})")
         else:
             print(f"New shape after Transpose: ({img.size[1]}, {img.size[0]})")
     except AttributeError:

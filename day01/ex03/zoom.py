@@ -3,6 +3,9 @@ from PIL import Image
 
 
 def print_long(img):
+    """
+Print array the right way
+    """
     print("[[", end='')
     print(img[0, 0])
     print(img[0, 1])
@@ -15,6 +18,9 @@ def print_long(img):
 
 
 def print_long_L(img):
+    """
+Print array the right way
+    """
     print(f"[[[{img[0, 0]}]")
     print(f"  [{img[0, 1]}]")
     print(f"  [{img[0, 2]}]")
@@ -26,7 +32,7 @@ def print_long_L(img):
 
 def zoom_at(img, x, y, zoom, w, h):
     """
-
+Not really a zoom, more than a crop.
     """
     zoom2 = zoom * 2
     img = img.crop((x - w / zoom2, y - h / zoom2,
