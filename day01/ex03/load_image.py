@@ -12,10 +12,10 @@ ft_load(path: str) -> np.ndarray
         img = Image.open(path)
     except FileNotFoundError:
         print(f"Error: File '{path}' not found.")
-        return None
+        exit()
     except Exception as e:
         print(f"Error: Failed to open image '{path}'. {e}")
-        return None
+        exit()
 
     try:
         if (img.layers > 1):
@@ -26,6 +26,6 @@ ft_load(path: str) -> np.ndarray
 {img.layers}) or ({img.size[1]}, {img.size[0]})")
     except AttributeError:
         print("Error: Image does not have a 'layers' attribute.")
-        return None
+        exit()
 
     return np.array(img)

@@ -1,4 +1,5 @@
 from load_image import ft_load
+import numpy as np
 from PIL import Image
 
 
@@ -33,7 +34,7 @@ Not really a zoom, more than a crop.
     zoom2 = zoom * 2
     img = img.crop((x - w / zoom2, y - h / zoom2,
                     x + w / zoom2, y + h / zoom2))
-    return img.resize((w, h), Image.LANCZOS)
+    return np.array(img.resize((w, h), Image.LANCZOS))
 
 
 def rotate():
@@ -62,21 +63,21 @@ Then transpose it (exchange X and Y coordinate in the image).
     w, h = 400, 400
     zoom = 1
 
-    image = Image.open(path)
+    image = ft_load(path)
+    image = zoom_at(Image.fromarray(image), x, y, zoom, w, h)
+    image = Image.fromarray(image).convert("L")
+    image.save("zoomed_animal.jpg")
 
-    img = zoom_at(image, x, y, zoom, w, h)
+    # img = ft_load("zoomed_animal.jpg")
 
-    img = img.convert("L")
-    img.save("zoomed_animal.jpg")
+    image = np.array(image)
 
-    img = ft_load("zoomed_animal.jpg")
+    print_long_L(image)
 
-    print_long_L(img)
-
-    img = rotate()
-    img.save("rotated_animal.jpg")
+    image = rotate()
+    image.save("rotated_animal.jpg")
     print_short(ft_load("rotated_animal.jpg", 0))
-    img.show()
+    image.show()
 
 
 if __name__ == '__main__':
