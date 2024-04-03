@@ -76,7 +76,7 @@ Then transpose it (exchange X and Y coordinate in the image).
     img = rotate()
     img.save("rotated_animal.jpg")
     print_short(ft_load("rotated_animal.jpg", 0))
-    # img.show()
+    img.show()
 
 
 if __name__ == '__main__':

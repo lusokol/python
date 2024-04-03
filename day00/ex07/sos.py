@@ -16,7 +16,7 @@ def main():
              "4": "....-", "5": ".....", "6": "-....",
              "7": "--...", "8": "---..", "9": "----.", " ": "/"}
     try:
-        if (argv.lenght() == 1)
+        if (sys.argv.lenght() == 1):
             raise AssertionError("Need 1 argument")
         for letter in sys.argv[1].upper():
             assert letter in morse, (

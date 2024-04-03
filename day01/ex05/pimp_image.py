@@ -33,9 +33,9 @@ Keep only the green color of the image received.
 If a pixel has a (10, 100, 190) RGB,\
  it keep only the green channel => (0, 100, 0)
     """
-    chan_red = array[:, :, 1]
+    chan_green = array[:, :, 1]
     img = np.zeros_like(array)
-    img[:, :, 1] = chan_red
+    img[:, :, 1] = chan_green
     Image.fromarray(img).show()
     Image.fromarray(img).save("filtered_img/landscape_green.jpg")
 
@@ -46,9 +46,9 @@ Keep only the blue color of the image received.
 If a pixel has a (10, 100, 190) RGB,\
  it keep only the blue channel => (0, 0, 190)
     """
-    chan_red = array[:, :, 2]
+    chan_blue = array[:, :, 2]
     img = np.zeros_like(array)
-    img[:, :, 2] = chan_red
+    img[:, :, 2] = chan_blue
     Image.fromarray(img).show()
     Image.fromarray(img).save("filtered_img/landscape_blue.jpg")
 
