@@ -1,26 +1,25 @@
 from load_csv import load
 import matplotlib.pyplot as plt
-import pandas as pd
-import numpy as np
 
 
 def main():
-    df = load("life_expectancy_years.csv")
-    index_ligne = df.index[df.iloc[:, 0] == 'France'].tolist()[0]
-    ligne_specifique = df.iloc[index_ligne]
-    print(ligne_specifique)
-
-    # x = #1790, 2110
-    # y = ligne_specifique[x]
-
-    fig, ax = plt.subplots(figsize=(5, 2.7), layout='constrained')
-
-    ax.set_xlabel('entry a')
-    ax.set_ylabel('entry b')
-
-    # fig, ax = plt.subplots()
-    # ax.plot(x, y)
+    """
+Use "life_expectancy_years.csv as data to generate a graph with it.
+    """
+    dataset = load("life_expectancy_years.csv")
+    fr_data = dataset[dataset["country"] == "France"]
+    years = fr_data.columns[1:]
+    country = fr_data.values[0, 1:]
+    # print(years)
+    # print(country)
+    plt.plot(years, country)
+    plt.title("France Life expectancy Projections")
+    plt.xlabel("Year")
+    plt.xticks(years[::40], rotation=0)
+    plt.ylabel("Life expectancy")
+    plt.yticks(range(30, 91, 10))
     plt.show()
+
 
 if __name__ == '__main__':
     main()
