@@ -18,7 +18,7 @@ def toNumber(pop_str):
 
 def main():
     """
-Use "life_expectancy_years.csv as data to generate a graph with it.
+Use "population_total.csv as data to generate a graph with it.
     """
     country1 = "France"
     country2 = "Belgium"
