@@ -10,8 +10,6 @@ Use "life_expectancy_years.csv as data to generate a graph with it.
     fr_data = dataset[dataset["country"] == "France"]
     years = fr_data.columns[1:]
     country = fr_data.values[0, 1:]
-    # print(years)
-    # print(country)
     plt.plot(years, country)
     plt.title("France Life expectancy Projections")
     plt.xlabel("Year")

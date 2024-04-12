@@ -17,7 +17,6 @@ as data to generate a graph with it.
     gdp_1900 = life_expectancy_data[year]
     life_expectancy_1900 = income_data[year]
 
-    plt.figure(figsize=(10, 6))
     plt.scatter(gdp_1900, life_expectancy_1900)
     plt.title(year)
     plt.xlabel("Gross domestic product")
