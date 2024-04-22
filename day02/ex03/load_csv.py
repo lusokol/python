@@ -17,4 +17,4 @@ Parse error and return dataset.
         return data
     except AssertionError as error:
         print(f"AssertionError: {error}")
-        return None
+        exit()

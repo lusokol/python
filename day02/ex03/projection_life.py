@@ -12,19 +12,26 @@ as data to generate a graph with it.
     life_expectancy_data = \
         load("income_per_person_gdppercapita_ppp_inflation_adjusted.csv")
 
-    year = '1900'
+    try:
+        year = '1900'
 
-    gdp_1900 = life_expectancy_data[year]
-    life_expectancy_1900 = income_data[year]
+        gdp_1900 = life_expectancy_data[year]
+        life_expectancy_1900 = income_data[year]
 
-    plt.scatter(gdp_1900, life_expectancy_1900)
-    plt.title(year)
-    plt.xlabel("Gross domestic product")
-    plt.ylabel("Life expectancy")
-    plt.xscale("log")
-    plt.xticks(ticks=[300, 1000, 10000], labels=['300', '1k', '10k'])
-    plt.tight_layout()
-    plt.show()
+        plt.scatter(gdp_1900, life_expectancy_1900)
+        plt.title(year)
+        plt.xlabel("Gross domestic product")
+        plt.ylabel("Life expectancy")
+        plt.xscale("log")
+        plt.xticks(ticks=[300, 1000, 10000], labels=['300', '1k', '10k'])
+        plt.tight_layout()
+        plt.show()
+    except IndexError as error:
+        print(f"IndexError: {error}")
+    except KeyError as error:
+        print(f"KeyError: {error}")
+    except KeyboardInterrupt:
+        print("KeyboardInterrupt: Forcequit")
 
 
 if __name__ == '__main__':
