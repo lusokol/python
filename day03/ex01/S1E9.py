@@ -15,7 +15,7 @@ class Character(ABC):
         return f"Vector: ('{self.family_name}', '{self.eyes}', '{self.hairs}')"
 
     def __repr__(self):
-        return f"Vector: ('{self.family_name}', '{self.hairs}', '{self.eyes}')"
+        return f"Vector: ('{self.family_name}', '{self.eyes}', '{self.hairs}')"
 
 
 class Stark(Character):

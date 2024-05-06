@@ -1,23 +1,50 @@
 import math
 
-def mean(*args: any):
-    print(f"mean : {sum(args[0]) / len(args[0])}")
 
-def median(*args: any):
-    lst = list(args[0])
-    lst.sort()
-    print(f"median : {lst[math.floor(len(lst) / 2)]}")
+def mean(data):
+    return sum(data) / len(data)
 
-def quartile(*args: any):
-    lst = list(args[0])
-    lst.sort()
-    q1 = lst[math.floor(len(lst) / 4)]
-    q3 = lst[math.floor(len(lst) / 4) * 3]
-    qrtl = [q1, q3]
-    formatted_qrtl = [f"{x:.1f}" for x in qrtl]
-    print(f"quartile : [{formatted_qrtl[0]}, {formatted_qrtl[1]}]")
+
+def median(args):
+    args.sort()
+    return args[math.floor(len(args) / 2)]
+
+
+def quartile(args):
+    args.sort()
+    q1 = args[math.floor(len(args) / 4)]
+    q3 = args[math.floor(len(args) / 4) * 3]
+    return [q1, q3]
+
+
+def variance(args):
+    m = mean(args)
+    return sum((x - m) ** 2 for x in args) / len(args)
+
+
+def std(args):
+    return variance(args) ** 0.5
+
 
 def ft_statistics(*args: any, **kwargs: any) -> None:
-    mean(args)
-    median(args)
-    quartile(args)
+    args = list(args)
+    for key, value in kwargs.items():
+        try:
+            match (value):
+                case "mean":
+                    print(f"mean : {mean(args)}")
+                case "median":
+                    print(f"median : {median(args)}")
+                case "quartile":
+                    print(f"quartile : [\
+{', '.join([f'{arg:.1f}' for arg in quartile(args)])}]")
+                case "std":
+                    print(f"std : {std(args)}")
+                case "var":
+                    print(f"var : {variance(args)}")
+                case _:
+                    break
+        except ZeroDivisionError:
+            print("ERROR")
+        except IndexError:
+            print("ERROR")
