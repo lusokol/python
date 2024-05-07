@@ -1,4 +1,7 @@
 def callLimit(limit: int):
+    """
+    Decorator which limit the number of function's call
+    """
     count = 0
 
     def callLimiter(function):
